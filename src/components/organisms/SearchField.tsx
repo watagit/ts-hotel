@@ -1,7 +1,8 @@
-import React, { ChangeEvent, FC, useCallback, useState } from 'react'
+import React, { FC, useState } from 'react'
 import styles from 'styles/utility/flex.module.scss'
 import { SearchButton, TextInput } from '../atoms'
-import { useStringChangeEvent } from '../../lib/customHooks'
+import { useStringChangeEvent } from 'lib/customHooks'
+import { searchHotels } from 'lib/hotels'
 
 const SearchField: FC = () => {
 
@@ -18,7 +19,7 @@ const SearchField: FC = () => {
       />
       <SearchButton
         label={'Search'}
-        onClick={() => null}
+        onClick={() => searchHotels(keyword)}
       />
     </div>
   )
